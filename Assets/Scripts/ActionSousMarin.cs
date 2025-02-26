@@ -25,15 +25,15 @@ public class ActionSousMarin : MonoBehaviour
         directionInput = new Vector3(directionAvecVitesse.x, 0f, directionAvecVitesse.y);
     }
 
-    void OnAccelerer(InputValue etatBouton)
-    {
-        if(etatBouton.isPressed) {
-            vitesseMouvement = 2;
-        }
-        else{
-            vitesseMouvement = 1;
-        }
-    }
+    // void OnAccelerer(InputValue etatBouton)
+    // {
+    //     if(etatBouton.isPressed) {
+    //         vitesseMouvement = 2;
+    //     }
+    //     else{
+    //         vitesseMouvement = 1;
+    //     }
+    // }
     // Update is called once per frame
 
     void FixedUpdate()
@@ -47,9 +47,9 @@ public class ActionSousMarin : MonoBehaviour
    
 
 
-    void Update()
-    {
+    // void Update()
+    // {
         
-    }
+    // }
 
  }
