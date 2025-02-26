@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class ActionSousMarin : MonoBehaviour
 {
 
-    [SerializeField] private float vitesseMouvement;
+    [SerializeField] private float vitesseMouvement = 1;
 
 
     private Rigidbody _rb;
@@ -28,10 +28,10 @@ public class ActionSousMarin : MonoBehaviour
     void OnAccelerer(InputValue etatBouton)
     {
         if(etatBouton.isPressed) {
-           
+            vitesseMouvement = 2;
         }
         else{
-            
+            vitesseMouvement = 1;
         }
     }
     // Update is called once per frame
