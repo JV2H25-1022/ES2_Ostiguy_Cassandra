@@ -20,6 +20,7 @@ public class ActionSousMarin : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        vitesseMouvement = 1;
     }
 
    // void OnMove(InputValue directionBase)
@@ -28,15 +29,15 @@ public class ActionSousMarin : MonoBehaviour
      //   directionInput = new Vector3(directionAvecVitesse.x, 0f, directionAvecVitesse.y);
    // }
 
-    // void OnAccelerer(InputValue etatBouton)
-    // {
-    //     if(etatBouton.isPressed) {
-    //         vitesseMouvement = 2;
-    //     }
-    //     else{
-    //         vitesseMouvement = 1;
-    //     }
-    // }
+    void OnAccelerer(InputValue etatBouton)
+     {
+         if(etatBouton.isPressed) {
+            vitesseMouvement = 2;
+       }
+         else{
+             vitesseMouvement = 1;
+         }
+     }
     // Update is called once per frame
 
     
