@@ -16,18 +16,16 @@ public class ActionSousMarin : MonoBehaviour
 
     public InputActionReference move;
 
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
         vitesseMouvement = 1;
+        animator = GetComponent<Animator>();
     }
 
-   // void OnMove(InputValue directionBase)
-   // {
-      //  Vector2 directionAvecVitesse = directionBase.Get<Vector2>() * vitesseMouvement;
-     //   directionInput = new Vector3(directionAvecVitesse.x, 0f, directionAvecVitesse.y);
-   // }
 
     void OnAccelerer(InputValue etatBouton)
      {
@@ -44,7 +42,7 @@ public class ActionSousMarin : MonoBehaviour
     private void Update()
      {
         directionInput = move.action.ReadValue<Vector3>();
-        print(directionInput);
+       
      }
     private void FixedUpdate()
     {
