@@ -61,6 +61,8 @@ public class ActionSousMarin : MonoBehaviour
             _animator.SetFloat("Speed", _vitesseMouvement);
         }
 
+
+
         //Horizontal
         if (_directionInput.z > 0)
         {
