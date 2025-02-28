@@ -22,7 +22,7 @@ public class ActionSousMarin : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
-        _vitesseMouvement = 1;
+        _vitesseMouvement = 1f;
         _animator = GetComponent<Animator>();
     }
 
@@ -30,10 +30,10 @@ public class ActionSousMarin : MonoBehaviour
     void OnAccelerer(InputValue etatBouton)
      {
          if(etatBouton.isPressed) {
-            _vitesseMouvement = 2;
+            _vitesseMouvement = 2f;
        }
          else{
-             _vitesseMouvement = 1;
+             _vitesseMouvement = 1f;
          }
      }
     // Update is called once per frame
@@ -42,34 +42,40 @@ public class ActionSousMarin : MonoBehaviour
     private void Update()
      {
         _directionInput = move.action.ReadValue<Vector3>();
-
+       
 
 
         //Vertical
         if (_directionInput.y > 0){
             _animator.SetBool("MvtVertical", true);
+            _animator.SetFloat("Speed", _vitesseMouvement);
         }
         else if (_directionInput.y < 0)
         {
             _animator.SetBool("MvtVertical", true);
+            _animator.SetFloat("Speed", -_vitesseMouvement);
         }
         else
         {
             _animator.SetBool("MvtVertical", false);
+            _animator.SetFloat("Speed", _vitesseMouvement);
         }
 
         //Horizontal
         if (_directionInput.z > 0)
         {
             _animator.SetBool("MvtHorizontal", true);
+            _animator.SetFloat("Speed", _vitesseMouvement);
         }
         else if (_directionInput.z < 0)
         {
             _animator.SetBool("MvtHorizontal", true);
+            _animator.SetFloat("Speed", -_vitesseMouvement);
         }
         else
         {
             _animator.SetBool("MvtHorizontal", false);
+            _animator.SetFloat("Speed", _vitesseMouvement);
         }
     }
     private void FixedUpdate()
