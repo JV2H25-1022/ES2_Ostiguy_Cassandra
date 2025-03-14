@@ -44,7 +44,7 @@ public class ActionSousMarin : MonoBehaviour
         _directionInput = move.action.ReadValue<Vector3>();
        
 
-
+//aurait du faire un speed vertical speed et horizontale speed pcq les deux fait en sorte que un fait pas fonctionner l'autre. horizontale est en dernier donc fonctionne.
         //Vertical
         if (_directionInput.y > 0){
             _animator.SetBool("MvtVertical", true);
